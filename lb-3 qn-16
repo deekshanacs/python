@@ -1,0 +1,11 @@
+def spell_checker(document, dictionary):
+    misspelled_words = []
+    words = document.split()
+    for word in words:
+        # Convert the word to lowercase to perform case-insensitive matching
+        word_lower = word.lower()
+        if word_lower not in dictionary:
+            misspelled_words.append(word)
+            
+    return misspelled_words
+valid_words = {'apple', 'banana', '
