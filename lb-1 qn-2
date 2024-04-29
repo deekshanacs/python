@@ -1,0 +1,16 @@
+
+def print_in_ascending_order(a, b, c):
+    if a == b == c:
+        print("Numbers are not distinct.")
+    elif a == b or a == c or b == c:
+        print("Numbers are not distinct.")
+    else:
+        numbers = [a, b, c]
+        numbers.sort()
+        print("Numbers in ascending order:", numbers[0], numbers[1], numbers[2])
+
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+num3 = float(input("Enter the third number: "))
+
+print_in_ascending_order(num1, num2, num3)
