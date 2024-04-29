@@ -1,0 +1,21 @@
+def calculate_total_expenses(expenses):
+    total_expenses_per_category = {}
+    for category, amount in expenses.items():
+        if category in total_expenses_per_category:
+            total_expenses_per_category[category] += amount
+        else:
+            total_expenses_per_category[category] = amount
+            
+    return total_expenses_per_category
+expenses = {
+    'Food': 200,
+    'Transportation': 100,
+    'Utilities': 150,
+    'Entertainment': 80,
+    'Food': 120,  # Additional expense for 'Food' category
+    'Shopping': 250
+}
+total_expenses_per_category = calculate_total_expenses(expenses)
+print("Total expenses for each category:")
+for category, total_expense in total_expenses_per_category.items():
+    print("{}: ${}".format(categ
