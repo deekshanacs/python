@@ -1,0 +1,22 @@
+
+def arithmetic_operations(num1, num2):
+    # Addition
+    print("Sum:", num1 + num2)
+    
+    # Subtraction
+    print("Difference:", num1 - num2)
+    
+    # Multiplication
+    print("Product:", num1 * num2)
+    
+    # Division
+    if num2 != 0:
+        print("Quotient:", num1 / num2)
+    else:
+        print("Division by zero is not allowed.")
+
+
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+
+arithmetic_operations(num1, num2)
