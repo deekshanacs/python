@@ -1,0 +1,14 @@
+def check_product_availability(product, warehouses):
+    total_quantity = 0
+    for warehouse in warehouses:
+        for item in warehouse:
+            if item[0] == product:
+                total_quantity += item[1]
+    return total_quantity
+warehouse1 = [("product1", 10), ("product2", 20), ("product3", 30)]
+warehouse2 = [("product2", 15), ("product4", 25), ("product5", 35)]
+warehouse3 = [("product1", 5), ("product3", 10), ("product5", 20)]
+warehouses = [warehouse1, warehouse2, warehouse3]
+product_to_check = "product2"
+total_available_quantity = check_product_availability(product_to_check, warehouses)
+print("Total quantity available for '{}' across all warehouses: {}".format(product_to_check, total_available_quantity))
