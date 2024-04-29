@@ -1,0 +1,9 @@
+
+names_list = input("Enter the list of names separated by space: ").split()
+
+unique_names = []
+for name in names_list:
+    if name not in unique_names:
+        unique_names.append(name)
+
+print("Updated list of names without duplicates:", unique_names)
