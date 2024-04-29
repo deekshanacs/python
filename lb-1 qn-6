@@ -1,0 +1,23 @@
+
+def sum_of_digits(number):
+    # Initialize sum to store the sum of digits
+    digit_sum = 0
+    
+    
+    number_str = str(number)
+    
+
+    for digit in number_str:
+        # Convert each digit back to an integer and add it to the sum
+        digit_sum += int(digit)
+    
+    return digit_sum
+
+
+num = int(input("Enter a number: "))
+
+
+result = sum_of_digits(num)
+
+
+print("Sum of digits of the number:", result)
