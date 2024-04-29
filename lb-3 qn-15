@@ -1,0 +1,18 @@
+def recommend_movies(preferences, movie_database):
+    recommended_movies = []
+    for movie, genres in movie_database.items():
+        if any(genre in preferences for genre in genres):
+            recommended_movies.append(movie)
+    return recommended_movies
+user_preferences = {'Action', 'Adventure', 'Sci-Fi'}
+movie_database = {
+    'The Dark Knight': ['Action', 'Crime', 'Drama'],
+    'Inception': ['Action', 'Adventure', 'Sci-Fi'],
+    'The Matrix': ['Action', 'Sci-Fi'],
+    'Jurassic Park': ['Action', 'Adventure', 'Sci-Fi'],
+    'Avatar': ['Action', 'Adventure', 'Fantasy']
+}
+recommended_movies = recommend_movies(user_preferences, movie_database)
+print("Recommended movies based on your preferences:")
+for movie in recommended_movies:
+    print("-", movie)
