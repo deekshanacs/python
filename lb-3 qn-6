@@ -1,0 +1,19 @@
+def create_dictionary(keys, values):
+
+    if len(keys) != len(values):
+        raise ValueError("Lengths of keys and values lists must be the same.")
+    
+  
+    dictionary = {keys[i]: values[i] for i in range(len(keys))}
+    
+    return dictionary
+
+
+keys_list = ['a', 'b', 'c', 'd']
+values_list = [10, 20, 30, 40]
+
+result_dict = create_dictionary(keys_list, values_list)
+
+
+print("Dictionary created from two lists:")
+print(result_dict)
