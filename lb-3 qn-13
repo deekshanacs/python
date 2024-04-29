@@ -1,0 +1,22 @@
+def translate_sentence(sentence, dictionary):
+    words = sentence.split()
+  
+    translated_words = [dictionary.get(word, word) for word in words]
+    
+    translated_sentence = ' '.join(translated_words)
+    
+    return translated_sentence
+
+english_to_spanish = {
+    'hello': 'hola',
+    'world': 'mundo',
+    'is': 'es',
+    'a': 'un',
+    'beautiful': 'hermoso',
+    'day': 'día'
+}
+
+english_sentence = "Hello world! Today is a beautiful day."
+spanish_translation = translate_sentence(english_sentence, english_to_spanish)
+print("English sentence:", english_sentence)
+print("Spanish translation:", spanish_translation)
