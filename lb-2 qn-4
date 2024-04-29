@@ -1,0 +1,10 @@
+
+def celsius_to_fahrenheit(celsius):
+    # Convert Celsius to Fahrenheit using the formula: F = (C * 9/5) + 32
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
+
+
+celsius_temperatures = [float(x) for x in input("Enter the temperatures in Celsius separated by space: ").split()]
+fahrenheit_temperatures = [celsius_to_fahrenheit(temp) for temp in celsius_temperatures]
+print("Temperatures in Fahrenheit:", fahrenheit_temperatures)
