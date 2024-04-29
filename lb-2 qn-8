@@ -1,0 +1,5 @@
+
+tuple1 = tuple(int(x) for x in input("Enter the first tuple of integers separated by space: ").split())
+tuple2 = tuple(int(x) for x in input("Enter the second tuple of integers separated by space: ").split())
+concatenated_tuple = tuple1 + tuple2
+print("New tuple after concatenation:", concatenated_tuple)
