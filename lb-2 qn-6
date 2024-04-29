@@ -1,0 +1,5 @@
+
+people_list = [("Alice", 25), ("Bob", 30), ("Charlie", 35), ("David", 40)]  # Example list of tuples
+people_dict = dict(people_list)
+print("Dictionary with names as keys and ages as values:")
+print(people_dict)
