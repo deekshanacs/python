@@ -1,0 +1,14 @@
+def second_largest_value(dictionary):
+   
+    values = list(dictionary.values())
+    unique_sorted_values = sorted(set(values), reverse=True)
+    if len(unique_sorted_values) < 2:
+        return None
+  
+    return unique_sorted_values[1]
+example_dict = {'a': 10, 'b': 20, 'c': 15, 'd': 25, 'e': 20}
+result = second_largest_value(example_dict)
+if result is not None:
+    print("The second largest value in the dictionary is:", result)
+else:
+    print("The dictionary does not have a second largest value.")
