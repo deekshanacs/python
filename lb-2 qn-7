@@ -1,0 +1,14 @@
+
+def calculate_total_score(student):
+    return sum(student[1])  # Sum of scores in all subjects
+students_list = [
+    ("Alice", (90, 85, 95)),
+    ("Bob", (85, 80, 90)),
+    ("Charlie", (95, 90, 85)),
+    ("David", (80, 85, 88))
+] 
+
+sorted_students = sorted(students_list, key=calculate_total_score, reverse=True)
+print("Sorted list of tuples based on total score in descending order:")
+for student in sorted_students:
+    print(student)
