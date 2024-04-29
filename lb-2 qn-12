@@ -1,0 +1,21 @@
+from collections import defaultdict
+
+def identify_trending_topics(comments, keywords):
+   
+    keyword_frequency = defaultdict(int)
+    
+   
+    for comment, _ in comments:
+        for word in comment.split():
+            if word.lower() in keywords:
+                keyword_frequency[word.lower()] += 1
+    
+    
+    sorted_keywords = sorted(keyword_frequency, key=lambda k: keyword_frequency[k], reverse=True)
+    
+    return sorted_keywords
+
+
+comments = [
+    ("I love the new features! Great job!", 10),
+    ("The interface is user-friendly and intuitive.", 15)
