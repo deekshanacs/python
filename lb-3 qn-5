@@ -1,0 +1,14 @@
+def combine_dictionaries(dict1, dict2):
+    combined_dict = dict1.copy()  # Create a copy of the first dictionary
+    for key, value in dict2.items():
+        if key in combined_dict:
+            combined_dict[key] += value
+        else:
+            combined_dict[key] = value
+    
+    return combined_dict
+dict1 = {'a': 10, 'b': 20, 'c': 30}
+dict2 = {'b': 30, 'c': 40, 'd': 50}
+combined_dict = combine_dictionaries(dict1, dict2)
+print("Combined dictionary with values added for common keys:")
+print(combined_dict)
