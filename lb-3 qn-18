@@ -1,0 +1,18 @@
+def check_room_availability(rooms, date):
+    available_rooms = []
+    for room, availability in rooms.items():
+      
+        if date in availability:
+            available_rooms.append(room)
+            
+    return available_rooms
+room_availability = {
+    'Room 101': ['2024-04-28', '2024-04-29', '2024-04-30'],
+    'Room 102': ['2024-04-28', '2024-04-29'],
+    'Room 103': ['2024-04-30', '2024-05-01'],
+    'Room 104': ['2024-04-29', '2024-04-30', '2024-05-01']
+}
+
+date_to_check = '2024-04-29'
+available_rooms = check_room_availability(room_availability, date_to_check)
+print("Available rooms for {}: {}".format(date_to_check, available_rooms))
