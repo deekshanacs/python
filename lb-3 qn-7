@@ -1,0 +1,13 @@
+def create_dictionary_of_dictionaries(keys, values):
+   
+    if len(keys) != len(values):
+        raise ValueError("Lengths of keys and values lists must be the same.")
+    dictionary_of_dictionaries = {key: {'value': value} for key, value in zip(keys, values)}
+  
+    return dictionary_of_dictionaries
+keys_list = ['a', 'b', 'c', 'd']
+values_list = [10, 20, 30, 40]
+result_dict_of_dicts = create_dictionary_of_dictionaries(keys_list, values_list)
+
+print("Dictionary of dictionaries created from two lists:")
+print(result_dict_of_dicts)
