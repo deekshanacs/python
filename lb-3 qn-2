@@ -1,0 +1,16 @@
+def print_dict_table(dictionary):
+  
+    max_key_length = max(len(str(key)) for key in dictionary.keys())
+    max_value_length = max(len(str(value)) for value in dictionary.values())
+    
+    print("+{}-{}+".format('-' * (max_key_length + 2), '-' * (max_value_length + 2)))
+    print("| {:<{}} | {:<{}} |".format("Key", max_key_length, "Value", max_value_length))
+    print("+{}-{}+".format('-' * (max_key_length + 2), '-' * (max_value_length + 2)))
+    
+    for key, value in dictionary.items():
+        print("| {:<{}} | {:<{}} |".format(str(key), max_key_length, str(value), max_value_length))
+    
+    print("+{}-{}+".format('-' * (max_key_length + 2), '-' * (max_value_length + 2)))
+example_dict = {'Name': 'John', 'Age': 30, 'City': 'New York', 'Country': 'USA'}
+
+print_dict_table(example_dict)
