@@ -1,0 +1,17 @@
+
+def count_vowels(word):
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    
+    word = word.lower()
+    vowel_count = 0
+    for char in word:
+        if char in vowels:
+            vowel_count += 1
+    
+    return vowel_count
+words = input("Enter a list of words separated by space: ").split()
+
+
+for word in words:
+    vowel_count = count_vowels(word)
+    print("Word:", word, "- Vowel count:", vowel_count)
