@@ -1,0 +1,31 @@
+
+
+def calculate_growth_rate(investment_data):
+    # Calculate growth rate using the formula: ((final value / initial value) - 1) * 100
+    initial_value = investment_data[0][1]
+    final_value = investment_data[-1][1]
+    growth_rate = ((final_value / initial_value) - 1) * 100
+    return growth_rate
+
+instrument1_data = [("2022-01-01", 100), ("2022-02-01", 110), ("2022-03-01", 120), ("2022-04-01", 130)]
+instrument2_data = [("2022-01-01", 150), ("2022-02-01", 160), ("2022-03-01", 170), ("2022-04-01", 180)]
+instrument3_data = [("2022-01-01", 200), ("2022-02-01", 210), ("2022-03-01", 220), ("2022-04-01", 230)]
+start_date = input("Enter the start date (YYYY-MM-DD) for the analysis period: ")
+end_date = input("Enter the end date (YYYY-MM-DD) for the analysis period: ")
+
+instrument1_period_data = [data for data in instrument1_data if start_date <= data[0] <= end_date]
+instrument2_period_data = [data for data in instrument2_data if start_date <= data[0] <= end_date]
+instrument3_period_data = [data for data in instrument3_data if start_date <= data[0] <= end_date]
+
+growth_rate1 = calculate_growth_rate(instrument1_period_data)
+growth_rate2 = calculate_growth_rate(instrument2_period_data)
+growth_rate3 = calculate_growth_rate(instrument3_period_data)
+
+max_growth_rate = max(growth_rate1, growth_rate2, growth_rate3)
+
+if max_growth_rate == growth_rate1:
+    print("Instrument 1 has the highest growth rate of {:.2f}%.".format(max_growth_rate))
+elif max_growth_rate == growth_rate2:
+    print("Instrument 2 has the highest growth rate of {:.2f}%.".format(max_growth_rate))
+else:
+    print("Instrument 3 has the highest growth rate of {:.2f}%.".format(max_growth_rate))
