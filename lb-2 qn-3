@@ -1,0 +1,19 @@
+
+def find_common_elements(list1, list2):
+
+    set1 = set(list1)
+    set2 = set(list2)
+    
+  
+    common_elements = list(set1.intersection(set2))
+    
+    return common_elements
+
+
+list1 = [int(x) for x in input("Enter the first list of integers separated by space: ").split()]
+list2 = [int(x) for x in input("Enter the second list of integers separated by space: ").split()]
+
+common_elements = find_common_elements(list1, list2)
+
+
+print("Common elements present in both lists:", common_elements)
