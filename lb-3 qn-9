@@ -1,0 +1,7 @@
+def sort_dictionary_by_keys(dictionary):
+    sorted_dict = dict(sorted(dictionary.items()))
+    return sorted_dict
+example_dict = {'b': 3, 'a': 2, 'd': 5, 'c': 4}
+sorted_dict = sort_dictionary_by_keys(example_dict)
+print("Sorted dictionary by keys:")
+print(sorted_dict)
