@@ -1,0 +1,482 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPGYr/YE1Wkblx1qvpNs134",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/deekshanacs/python/blob/main/Python-training(day2)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 41,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VUiGTo7dtk0w",
+        "outputId": "9c5bcabe-2712-41a4-da87-f5c60c45bb74"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "List of odd numbers: [1, 3, 5, 7, 9]\n",
+            "List of even numbers: [2, 4, 6, 8, 10]\n",
+            "Squares of odd numbers: [1, 9, 25, 49, 81]\n",
+            "Squares of even numbers: [4, 16, 36, 64, 100]\n"
+          ]
+        }
+      ],
+      "source": [
+        "#1.\n",
+        "nos=[1,2,3,4,5,6,7,8,9,10]\n",
+        "odd = [num for num in nos if num % 2 != 0]\n",
+        "even = [num for num in nos if num % 2 == 0]\n",
+        "squares_of_odd = [num ** 2 for num in odd]\n",
+        "squares_of_even = [num ** 2 for num in even]\n",
+        "print(\"List of odd numbers:\", odd)\n",
+        "print(\"List of even numbers:\", even)\n",
+        "print(\"Squares of odd numbers:\", squares_of_odd)\n",
+        "print(\"Squares of even numbers:\", squares_of_even)\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#2.\n",
+        "nos = [23, 45, 12, 67, 5, 89, 34, 18, 9, 56]\n",
+        "largest = nos[0]\n",
+        "smallest = nos[0]\n",
+        "for num in nos:\n",
+        "    if num > largest:\n",
+        "        largest = num\n",
+        "    if num < smallest:\n",
+        "        smallest = num\n",
+        "print(\"Largest number in the list:\", largest)\n",
+        "print(\"Smallest number in the list:\", smallest)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AbN4OQhyyby1",
+        "outputId": "7b925147-30c5-48f8-c2b4-14e0e76c42f3"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Largest number in the list: 89\n",
+            "Smallest number in the list: 5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "33.\n",
+        "numbers = [23, 45, 12, 67, 5, 89, 34, 18, 9, 56]\n",
+        "sorted_numbers = sorted(numbers)\n",
+        "second_smallest = sorted_numbers[1]\n",
+        "second_largest = sorted_numbers[-2]\n",
+        "print(\"Second smallest number in the list:\", second_smallest)\n",
+        "print(\"Second largest number in the list:\", second_largest)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JKWUJe-3yxve",
+        "outputId": "2b6058e2-dca6-4ba0-f942-b981599902c4"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Second smallest number in the list: 9\n",
+            "Second largest number in the list: 67\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "list=[3,5,2,1,4]\n",
+        "list1=list\n",
+        "k=len(list)\n",
+        "big=0\n",
+        "for i in range(0,k):\n",
+        "  for j in range(i,k):\n",
+        "    if list[i]>list[j]:\n",
+        "      tem=list[i]\n",
+        "      list[i]=list[j]\n",
+        "      list[j]=tem\n",
+        "print(f\"Ascending order :{list}\")\n",
+        "print(f\"descending order:{list[::-1]}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2n_dFo0x1I4V",
+        "outputId": "db46b4ad-3043-469b-927e-4bf6478d8a42"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ascending order :[1, 2, 3, 4, 5]\n",
+            "descending order:[5, 4, 3, 2, 1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#5.\n",
+        "list=[45,67,83,24,55,87,77,34]\n",
+        "k=int(input(\"Enter the number to find the position :\"))\n",
+        "c=0\n",
+        "for n in list:\n",
+        "  c+=1\n",
+        "  if n==k:\n",
+        "    break\n",
+        "print(f\"The Position of {k} is {c-1}\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BIn0QCNA1x1z",
+        "outputId": "a7de6654-0ef1-4624-9cb9-0fe664ce107d"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the number to find the position :24\n",
+            "The Position of 24 is 3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "#6.\n",
+        "l1 = [4, 5, 6, 5, 6, 7, 5, 2, 5, 8, 4]\n",
+        "d1 = {}\n",
+        "for i in l1:\n",
+        "  if i in d1:\n",
+        "    d1[i] += 1\n",
+        "  else:\n",
+        "    d1[i] = 1\n",
+        "maxvalue = max(d1.values())\n",
+        "maxkey = max(d1, key=d1.get)\n",
+        "\n",
+        "print(\"The most frequent element is:\", maxkey)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZOJliJSoUxap",
+        "outputId": "60dacdc0-7bca-4c81-aefc-11a576cd4cbf"
+      },
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The most frequent element is: 5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#7.\n",
+        "di={}\n",
+        "k= ['Ten', 'Twenty', 'Thirty']\n",
+        "v= [10, 20, 30]\n",
+        "for i in range(len(k)):\n",
+        "  di[k[i]]=v[i]\n",
+        "print(di)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SoIa8a3hVUB_",
+        "outputId": "d03cc7dd-ca46-4625-e6e6-9f0f4569db12"
+      },
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'Ten': 10, 'Twenty': 20, 'Thirty': 30}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#8.\n",
+        "voter=[\"trisha\",\"nithya menon\",\"nayan\",\"simran\",\"aditi\",\"priyabhavanishankar\",\"priyanka mohan\",\"jyothika\",\"aparna das\",\"ivana\"]\n",
+        "vote=[]\n",
+        "d=0\n",
+        "v=0\n",
+        "r=0\n",
+        "n=0\n",
+        "print(\"\\ncantidate :\\n1.EPS \\n2.OPS \\n3.MKS\\n4.Nota\")\n",
+        "print(\"\\n-----------------------------------------------------------------------------\\n\")\n",
+        "for i in voter:\n",
+        "    ch=int(input(f\"{i} your choice : \"))\n",
+        "    print()\n",
+        "    match ch:\n",
+        "         case 1:\n",
+        "             d+=1\n",
+        "         case 2:\n",
+        "             v+=1\n",
+        "         case 3:\n",
+        "             r+=1\n",
+        "         case 4:\n",
+        "             n+=1\n",
+        "print(\"\\n-----------------------------------------------------------------------------\\n\")\n",
+        "print(f\"vote count :\\EPS : {d}\\nOPS : {v}\\nMKS: {r}\\nNota : {n}\")\n",
+        "print(\"\\n-----------------------------------------------------------------------------\\n\")\n",
+        "\n",
+        "\n",
+        "cand=[d,v,r,n]\n",
+        "m=0\n",
+        "for i in cand:\n",
+        "  if i>m:\n",
+        "    m=i\n",
+        "if m==d:\n",
+        "    print(\"EPS won the election!\")\n",
+        "    cand.remove(d)\n",
+        "elif m==v:\n",
+        "    print(\"OPS won the election!\")\n",
+        "    cand.remove(v)\n",
+        "elif m==r:\n",
+        "    print(\"MKS won the election!\")\n",
+        "    cand.remove(r)\n",
+        "else:\n",
+        "    print(\"Nota has higher votes than others...\")\n",
+        "    cand.remove(n)\n",
+        "print(\"\\n-----------------------------------------------------------------------------\\n\")\n",
+        "max=0\n",
+        "for i in cand:\n",
+        "  if i>max:\n",
+        "    max=i\n",
+        "run=max\n",
+        "if run==d:\n",
+        "    print(\"EPS is runner of the election\")\n",
+        "elif run==v:\n",
+        "    print(\"OPS is runner of the election\")\n",
+        "elif run==r:\n",
+        "    print(\"MKS3\n",
+        "     is runner of the election\")\n",
+        "else:\n",
+        "    print(\"Nota has the second higher votes than others...\")\n",
+        "print(\"\\n-----------------------------------------------------------------------------\\n\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Eq9ikJhbVppj",
+        "outputId": "14a7727a-b7a4-44e2-f09a-968e7452ea25"
+      },
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "cantidate :\n",
+            "1.EPS \n",
+            "2.OPS \n",
+            "3.MKS\n",
+            "4.Nota\n",
+            "\n",
+            "-----------------------------------------------------------------------------\n",
+            "\n",
+            "trisha your choice : 1\n",
+            "\n",
+            "nithya menon your choice : 2\n",
+            "\n",
+            "nayan your choice : 1\n",
+            "\n",
+            "simran your choice : 1\n",
+            "\n",
+            "aditi your choice : 3\n",
+            "\n",
+            "priyabhavanishankar your choice : 3\n",
+            "\n",
+            "priyanka mohan your choice : 1\n",
+            "\n",
+            "jyothika your choice : 1\n",
+            "\n",
+            "aparna das your choice : 1\n",
+            "\n",
+            "ivana your choice : 1\n",
+            "\n",
+            "\n",
+            "-----------------------------------------------------------------------------\n",
+            "\n",
+            "vote count :\\EPS : 7\n",
+            "OPS : 1\n",
+            "MKS: 2\n",
+            "Nota : 0\n",
+            "\n",
+            "-----------------------------------------------------------------------------\n",
+            "\n",
+            "EPS won the election!\n",
+            "\n",
+            "-----------------------------------------------------------------------------\n",
+            "\n",
+            "MKS is runner of the election\n",
+            "\n",
+            "-----------------------------------------------------------------------------\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#9.\n",
+        "def ruptousd(r):\n",
+        "   return (c*9/5)+32\n",
+        "def ctof(r):\n",
+        "  return r/83\n",
+        "def BMI(x,y):\n",
+        "  return x/(y*y)\n",
+        "def siminterest(x,y,z):\n",
+        "  return (x*y*z)/100\n",
+        "\n",
+        "print(\"1.indian rupees to us dollar.\\n2.celsius to fahrenheit.\\n3.BMI calculation.\\n4.Simple interest calculation.\")\n",
+        "c=int(input(\"Enter the choice : \"))\n",
+        "match c:\n",
+        "  case 1:\n",
+        "    x=int(input(\"Enter the amount : \"))\n",
+        "    print(f\"USD : {ruptousd(x)}\")\n",
+        "  case 2:\n",
+        "    x=int(input(\"Enter the celsius : \"))\n",
+        "    print(\"the Fahrenheit : \",ctof(x))\n",
+        "  case 3:\n",
+        "    x=int(input(\"Enter the weight : \"))\n",
+        "    y=int(input(\"Enter the height : \"))\n",
+        "    print(\"the BMI calculation : \",BMI(x,y))\n",
+        "  case 4:\n",
+        "    x=int(input(\"Enter the principle : \"))\n",
+        "    y=int(input(\"Enter the rate : \"))\n",
+        "    z=int(input(\"Enter the time : \"))\n",
+        "    siminterest(x,y,z)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eyAOvgaKY9CA",
+        "outputId": "12746d6f-2180-4503-ca34-75fddb3c2e57"
+      },
+      "execution_count": 37,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1.indian rupees to us dollar.\n",
+            "2.celsius to fahrenheit.\n",
+            "3.BMI calculation.\n",
+            "4.Simple interest calculation.\n",
+            "Enter the choice : 1\n",
+            "Enter the amount : 4000\n",
+            "USD : 33.8\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#10.\n",
+        "ls=input(\"Enter the list elements : \")\n",
+        "ls=ls.split(',')\n",
+        "lst=[]\n",
+        "for i in ls:\n",
+        "  i=int(i)\n",
+        "  lst.append(i)\n",
+        "\n",
+        "for i in range(len(lst)):\n",
+        "  for j in range(i,len(lst)):\n",
+        "    while lst[i]>lst[j]:\n",
+        "      temp=lst[i]\n",
+        "      lst[i]=lst[j]\n",
+        "      lst[j]=temp\n",
+        "print(lst)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5-q9sK9VZ4k3",
+        "outputId": "ed1d9636-b1f5-45c6-ede1-bb8a5f99ed8a"
+      },
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the list elements : 3,4,5,6,7,234,66\n",
+            "[3, 4, 5, 6, 7, 66, 234]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
