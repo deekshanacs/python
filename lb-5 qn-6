@@ -1,0 +1,9 @@
+'''Write a program to calculate the total cost
+of a meal, including tax and tip, based on user input for the meal cost
+and percentage rates for tax and tip.'''
+
+tc=int(input("Enter the cost of meal : "))
+tax=int(input("Enter the tax to be paid(%) : "))
+tip=int(input("Enter the tip amnt : "))
+fc=tc+(tax/100)*tc+tip
+print("Total cost of the meal is : ",fc)
