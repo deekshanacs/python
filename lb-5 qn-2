@@ -1,0 +1,8 @@
+'''Create a program that takes a user's age as input and outputs
+whether they are eligible to vote or not (considering the legal voting age is 18).'''
+
+age=int(input("Enter your age : "))
+if age>=18:
+    print("You're eligible to cast your vote!")
+else:
+    print("You're not eligible to vote!")
