@@ -1,0 +1,8 @@
+#4.Develop a program that takes a user's temperature as input and outputs 
+#whether they have a fever or not (considering a fever if temperature is equal to or above 100.4°F or 38°C).
+
+tem=(input("Enter the temperature : "))
+if tem>=100.4 and tem>=38 :
+    print("You are suffering from fever!")
+else:
+    print("You are completely alright!")
