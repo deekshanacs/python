@@ -1,0 +1,7 @@
+#Write a Python program to determine whether a given year is a leap year or not
+
+yr=int(input("Enter the year : "))
+if yr%4==0 :
+    print("The year is a leap year!")
+else:
+    print("the year is a non-leap year!")
