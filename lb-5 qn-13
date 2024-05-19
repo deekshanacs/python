@@ -1,0 +1,19 @@
+account_balance = float(input("Enter your account balance: $"))
+withdrawal_amount = float(input("Enter the withdrawal amount: $"))
+if withdrawal_amount <= account_balance:
+    account_balance -= withdrawal_amount
+    print(f"Transaction successful. Your new balance is ${account_balance:.2f}.")
+else:
+    print("Insufficient funds. Transaction failed.")
+
+def test_case(account_balance, withdrawal_amount, expected_output):
+    if withdrawal_amount <= account_balance:
+        result = "Transaction successful."
+    else:
+        result = "Insufficient funds."
+    assert result == expected_output, f"Expected '{expected_output}', but got '{result}'"
+    print(f"Test case with account balance: ${account_balance}, withdrawal amount: ${withdrawal_amount} passed.")
+test_case(1000, 500, "Transaction successful.")
+test_case(200, 300, "Insufficient funds.")
+test_case(1500, 1500, "Transaction successful.")
+print("All test cases passed.")
