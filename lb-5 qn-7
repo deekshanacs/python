@@ -1,0 +1,12 @@
+#7.Develop a program to classify a triangle based on the lengths of 
+#its sides (scalene, isosceles, or equilateral).
+
+s1=int(input("Enter side-1 of the triangle : "))
+s2=int(input("Enter side-2 of the triangle : "))
+s3=int(input("Enter side-3 of the traingle : "))
+if s1==s2==s3:
+    print("The traingle is equilateral!")
+elif s1==s2 or s2==s3 or s1==s3:
+    print("The triangle is isoceles!")
+elif s1!=s2!=s3:
+    print("The traingle is scalene")
