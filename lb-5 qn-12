@@ -1,0 +1,66 @@
+menu = {
+    "Burger": 10.00,
+    "Pizza": 15.00,
+    "Salad": 7.00,
+    "Pasta": 12.00,
+    "Soda": 3.00,
+    "Dessert": 5.00
+}
+
+cart = {}
+
+def display_menu():
+    print("\nMenu:")
+    for item, price in menu.items():
+        print(f"{item}: ${price:.2f}")
+
+def add_to_cart(item, quantity):
+    if item in menu:
+        if item in cart:
+            cart[item] += quantity
+        else:
+            cart[item] = quantity
+        print(f"Added {quantity} x {item} to the cart.")
+    else:
+        print(f"Item '{item}' is not in the menu.")
+
+def calculate_total(cart):
+    total = sum(menu[item] * quantity for item, quantity in cart.items())
+    return total
+
+def apply_discount(total):
+    if total > 100:
+        discount = 0.15
+    elif total > 50:
+        discount = 0.10
+    else:
+        discount = 0.00
+    discounted_total = total * (1 - discount)
+    return discounted_total, discount
+
+def display_cart():
+    print("\nYour Cart:")
+    for item, quantity in cart.items():
+        print(f"{item}: {quantity} x ${menu[item]:.2f}")
+    total = calculate_total(cart)
+    discounted_total, discount = apply_discount(total)
+    print(f"\nTotal: ${total:.2f}")
+    if discount > 0:
+        print(f"Discount: {discount*100:.0f}%")
+    print(f"Total after discount: ${discounted_total:.2f}")
+
+def main():
+    while True:
+        display_menu()
+        choice = input("\nEnter the item to add to your cart (or type 'done' to finish): ")
+        if choice.lower() == 'done':
+            break
+        if choice in menu:
+            quantity = int(input(f"Enter the quantity of {choice}: "))
+            add_to_cart(choice, quantity)
+        else:
+            print(f"Item '{choice}' is not available in the menu.")
+    
+    display_cart()
+if __name__ == "__main__":
+    main()
