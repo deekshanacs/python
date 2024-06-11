@@ -1,0 +1,67 @@
+import random
+
+# Constants for grade points
+GRADE_POINTS = {
+    'O': 10,
+    'A': 9,
+    'B': 8,
+    'C': 7,
+    'D': 6,
+    'U': 0
+}
+
+def create_result_file(file_path):
+    names = [f"Student{i+1}" for i in range(30)]
+    with open(file_path, 'w') as file:
+        for name in names:
+            reg_no = random.randint(1000, 9999)
+            grades = [random.choice(list(GRADE_POINTS.keys())) for _ in range(5)]
+            total_marks = sum(GRADE_POINTS[grade] for grade in grades)
+            percentage = (total_marks / 50) * 100
+            file.write(f"{name},{reg_no},{','.join(grades)},{total_marks},{percentage:.2f}\n")
+
+def read_result_file(file_path):
+    with open(file_path, 'r') as file:
+        content = file.read()
+    print(content)
+
+def analyze_results(input_file, output_file):
+    with open(input_file, 'r') as file:
+        students = [line.strip().split(',') for line in file]
+    
+    analysis = {
+        '90% and above': [],
+        '80%-89%': [],
+        '70%-79%': [],
+        'below 70%': [],
+        'arrear': []
+    }
+
+    for student in students:
+        name, reg_no, *grades, total_marks, percentage = student
+        percentage = float(percentage)
+        if 'U' in grades:
+            analysis['arrear'].append(student)
+        elif percentage >= 90:
+            analysis['90% and above'].append(student)
+        elif percentage >= 80:
+            analysis['80%-89%'].append(student)
+        elif percentage >= 70:
+            analysis['70%-79%'].append(student)
+        else:
+            analysis['below 70%'].append(student)
+
+    with open(output_file, 'w') as file:
+        for category, students in analysis.items():
+            file.write(f"{category}:\n")
+            for student in students:
+                file.write(f"{','.join(student)}\n")
+            file.write("\n")
+
+result_file = 'result.txt'
+analysis_file = 'analysis.txt'
+create_result_file(result_file)
+read_result_file(result_file)
+analyze_results(result_file, analysis_file)
+
+read_result_file(analysis_file)
