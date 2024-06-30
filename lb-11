@@ -1,0 +1,53 @@
+
+To create a simple calculator using tkinter.
+
+import tkinter as tk
+
+def add():
+    try:
+        result = float(entry1.get()) + float(entry2.get())
+        label_result.config(text=f"Result: {result}")
+    except ValueError:
+        label_result.config(text="Invalid input")
+def subtract():
+    try:
+        result = float(entry1.get()) - float(entry2.get())
+        label_result.config(text=f"Result: {result}")
+    except ValueError:
+        label_result.config(text="Invalid input")
+def multiply():
+    try:
+        result = float(entry1.get()) * float(entry2.get())
+        label_result.config(text=f"Result: {result}")
+    except ValueError:
+        label_result.config(text="Invalid input")
+def divide():
+    try:
+        result = float(entry1.get()) / float(entry2.get())
+        label_result.config(text=f"Result: {result}")
+    except ValueError:
+        label_result.config(text="Invalid input")
+    except ZeroDivisionError:
+        label_result.config(text="Cannot divide by zero")
+
+root = tk.Tk()
+root.title("Simple Calculator")
+
+entry1 = tk.Entry(root)
+entry2 = tk.Entry(root)
+
+button_add = tk.Button(root, text="+", command=add)
+button_subtract = tk.Button(root, text="-", command=subtract)
+button_multiply = tk.Button(root, text="*", command=multiply)
+button_divide = tk.Button(root, text="/", command=divide)
+
+label_result = tk.Label(root)
+
+entry1.pack()
+entry2.pack()
+button_add.pack(side="left")
+button_subtract.pack(side="left")
+button_multiply.pack(side="left")
+button_divide.pack(side="left")
+label_result.pack()
+root.mainloop()
