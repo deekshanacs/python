@@ -1,0 +1,15 @@
+MEDIUM:
+You are given a 1D numpy array representing the daily closing prices of a stock over a period of time. Write a function moving_average that calculates the n-day moving average of the stock prices.
+
+
+import numpy as np
+def moving_average(prices, n):
+    if n <= 0 or n > len(prices):
+        raise ValueError("n must be a positive integer less than or equal to the length of prices")
+    weights = np.ones(n) / n
+    moving_avg = np.convolve(prices, weights, mode='valid')
+    return moving_avg
+prices = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+n = 3
+result = moving_average(prices, n)
+print(result)
