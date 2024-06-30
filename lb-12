@@ -1,0 +1,48 @@
+# To create a smiling multicolored emoji using the turtle module.
+
+
+import turtle
+screen = turtle.Screen()
+screen.title("Smiley Emoji with Rainbow Background")
+screen.bgcolor("white")
+drawer = turtle.Turtle()
+drawer.speed(0)
+def draw_rectangle(color, width, height, x, y):
+    drawer.penup()
+    drawer.goto(x, y)
+    drawer.pendown()
+    drawer.color(color)
+    drawer.begin_fill()
+    for _ in range(2):
+        drawer.forward(width)
+        drawer.right(90)
+        drawer.forward(height)
+        drawer.right(90)
+    drawer.end_fill()
+colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+stripe_height = 50
+screen_width = screen.window_width()
+
+for i, color in enumerate(colors):
+    draw_rectangle(color, screen_width, stripe_height, -screen_width // 2, screen.window_height() // 2 - (i * stripe_height))
+def draw_circle(color, radius, x, y):
+    drawer.penup()
+    drawer.goto(x, y)
+    drawer.pendown()
+    drawer.color(color)
+    drawer.begin_fill()
+    drawer.circle(radius)
+    drawer.end_fill()
+draw_circle("yellow", 100, 0, -50)
+draw_circle("white", 20, -35, 50)
+draw_circle("white", 20, 35, 50)
+draw_circle("black", 10, -35, 65)
+draw_circle("black", 10, 35, 65)
+drawer.penup()
+drawer.goto(-40, 10)
+drawer.pendown()
+drawer.right(90)
+drawer.circle(40, 180)
+drawer.hideturtle()
+turtle.done()
+
