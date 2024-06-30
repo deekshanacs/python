@@ -1,0 +1,19 @@
+HIGH:
+Write a sample python program for handling multiple exceptions.
+
+def handle_multiple_exceptions():
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+
+        result = num1 / num2
+        print(f"The result of dividing {num1} by {num2} is {result}")
+    except ValueError:
+        print("Invalid input. Please enter valid numbers.")
+    except ZeroDivisionError:
+        print("Error: Division by zero is not allowed.")
+
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+if __name__ == "__main__":
+    handle_multiple_exceptions()
