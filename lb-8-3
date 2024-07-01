@@ -1,0 +1,46 @@
+HIGH:
+Write a Python module that converts decimal to binary and binary to decimal. Generate a Python program that imports the conversion module and utilizes those function.
+
+def decimal_to_binary(decimal):
+    if decimal == 0:
+        return "0"
+    binary = ""
+    while decimal > 0:
+        binary = str(decimal % 2) + binary
+        decimal = decimal // 2
+    return binary
+
+def binary_to_decimal(binary):
+    decimal = 0
+    for digit in binary:
+        decimal = decimal * 2 + int(digit)
+    return decimal
+
+def main():
+    print("Decimal and Binary Conversion Program")
+
+    while True:
+        print("\nSelect the conversion type:")
+        print("1. Decimal to Binary")
+        print("2. Binary to Decimal")
+        print("3. Exit")
+        
+        choice = input("Enter your choice: ")
+        if choice == '1':
+            decimal = int(input("Enter a decimal number: "))
+            binary = decimal_to_binary(decimal)
+            print(f"{decimal} in decimal is {binary} in binary")
+        elif choice == '2':
+            binary = input("Enter a binary number: ")
+            decimal = binary_to_decimal(binary)
+            print(f"{binary} in binary is {decimal} in decimal")
+        elif choice == '3':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
+
+
