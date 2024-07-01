@@ -1,0 +1,51 @@
+MEDIUM:
+Write a Python module for currency conversion. Use that conversion functions in another Python program
+
+
+def usd_to_eur(usd, exchange_rate):
+    return usd * exchange_rate
+
+def eur_to_usd(eur, exchange_rate):
+    return eur / exchange_rate
+
+def usd_to_gbp(usd, exchange_rate):
+    return usd * exchange_rate
+
+def gbp_to_usd(gbp, exchange_rate):
+    return gbp / exchange_rate
+
+def eur_to_gbp(eur, exchange_rate):
+    return eur * exchange_rate
+
+def gbp_to_eur(gbp, exchange_rate):
+    return gbp / exchange_rate
+
+def main():
+    print("Currency Conversion Program")
+    
+    usd_to_eur_rate = float(input("Enter the exchange rate from USD to EUR: "))
+    usd_to_gbp_rate = float(input("\nEnter the exchange rate from USD to GBP: "))
+    eur_to_gbp_rate = float(input("\nEnter the exchange rate from EUR to GBP: "))
+
+    usd = float(input("Enter amount in USD: "))
+    eur = usd_to_eur(usd, usd_to_eur_rate)
+    print(f"{usd} USD is {eur:.2f} EUR")
+    eur = float(input("Enter amount in EUR: "))
+    usd = eur_to_usd(eur, usd_to_eur_rate)
+    print(f"{eur} EUR is {usd:.2f} USD")
+    usd = float(input("Enter amount in USD: "))
+    gbp = usd_to_gbp(usd, usd_to_gbp_rate)
+    print(f"{usd} USD is {gbp:.2f} GBP")
+    gbp = float(input("Enter amount in GBP: "))
+    usd = gbp_to_usd(gbp, usd_to_gbp_rate)
+    print(f"{gbp} GBP is {usd:.2f} USD")
+    eur = float(input("Enter amount in EUR: "))
+    gbp = eur_to_gbp(eur, eur_to_gbp_rate)
+    print(f"{eur} EUR is {gbp:.2f} GBP")
+    gbp = float(input("Enter amount in GBP: "))
+    eur = gbp_to_eur(gbp, eur_to_gbp_rate)
+    print(f"{gbp} GBP is {eur:.2f} EUR")
+
+if __name__ == "__main__":
+    main()
+
